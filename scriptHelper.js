@@ -1,5 +1,5 @@
 // Write your helper functions here!
-//require('isomorphic-fetch');
+require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
@@ -26,25 +26,14 @@ function validateInput(testInput) {
     return "Is a Number"
   }
 }
+//console.log(validateInput(76678))
 
 
-window.addEventListener("load", function() {
-  let testForm = document.querySelector("form");
-  //console.log(testForm)
-  testForm.addEventListener("submit", function(event) {
-    let pilotName = document.querySelector("input[name=pilotName]");
-    let pilot =pilotName.value
-    console.log(pilot)
-
-    if (validateInput(pilot) === "Null" || validateInput(pilot) === "Is a Number") {
-        alert("All fields are required!");
-     }
-     event.preventDefault()
-  });
-});
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   
+  
+
+ 
 }
 
 
