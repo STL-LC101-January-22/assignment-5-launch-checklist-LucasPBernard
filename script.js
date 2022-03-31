@@ -103,9 +103,9 @@ window.addEventListener("load", function() {
           list.setAttribute('style','visibility:visible');
           launchStatus.setAttribute('style','color:rgb(65,159,106)');
           launchStatus.innerHTML = "Shuttle ready for launch";
-          missionTarget.innerText = "INSTALLING SUPER INVASIVE SPYWARE..."
-          missionTarget.style.color = 'red';
-          missionTarget.style.fontSize = '50px'
+        //   missionTarget.innerText = "INSTALLING SUPER INVASIVE SPYWARE..."
+        //   missionTarget.style.color = 'red';
+        //   missionTarget.style.fontSize = '50px'
 
 
       }
