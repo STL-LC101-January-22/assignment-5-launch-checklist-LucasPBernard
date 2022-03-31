@@ -2,7 +2,8 @@
 require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
-`  <h2>Mission Destination</h2>
+
+let myHTML = `  <h2>Mission Destination</h2>
   <ol>
       <li>Name: </li>
       <li>Diameter: </li>
@@ -39,9 +40,8 @@ function validateInput(testInput) {
 //console.log(validateInput(76678))
 
 
-
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-  
+  console.log('formSubmission')
 
  
 }
@@ -57,7 +57,7 @@ console.log(planetsReturned)
 }
 
 function pickPlanet(planets) {
-
+console.log('pickPlanet')
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;

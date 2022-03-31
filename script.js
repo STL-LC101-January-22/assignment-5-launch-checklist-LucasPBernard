@@ -1,12 +1,12 @@
 // Write your JavaScript code here!
 
-const { formSubmission } = require("./scriptHelper");
-
+// const { formSubmission } = require("./scriptHelper");
+// const { scriptHelper } = require("./scriptHelper");
 window.addEventListener("load", function() {
    console.log('compiled');
    let listedPlanets =[];
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-   let listedPlanetsResponse = planetsReturned;
+   let listedPlanetsResponse = myFetch();
    listedPlanetsResponse.then(function (result) {
        listedPlanets = result;
        console.log(listedPlanets);
@@ -28,14 +28,18 @@ window.addEventListener("load", function() {
       let fuelLevel = fuelLevelInput.value
       let cargoLevelInput = document.querySelector("input[name=cargoMass]");
       let cargoLevel = cargoLevelInput.value
-      let faultyItems = document.getElementById("faultyItems");
+      let list = document.getElementById("faultyItems");
       let pilotStatus = document.getElementById("pilotStatus");
       let copilotStatus = document.getElementById("copilotStatus");
       let fuelStatus = document.getElementById('fuelStatus');
       let cargoStatus = document.getElementById('cargoStatus')
       let launchStatus = document.getElementById('launchStatus')
+      let missionTarget = document.getElementById('missionTarget')
+
       console.log('hello')
 
+      formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel)
+      
       if (validateInput(pilot) === "Null"||validateInput(copilot) === "Null"||validateInput(fuelLevel) === "Null"||validateInput(cargoLevel) === "Null") {
         alert("All fields are required!");
       }
@@ -43,14 +47,14 @@ window.addEventListener("load", function() {
         alert("Make sure to enter valid information for each field!");
       }
       if (validateInput(pilot) === "Is a Number") {
-        faultyItems.setAttribute('style','visibility:visible');
+        list.setAttribute('style','visibility:visible');
         pilotStatus.innerHTML = `Pilot ${pilot} is not ready for launch`;
       }
       if (validateInput(pilot) === "Not a Number") {
         pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
       }
       if (validateInput(copilot) === "Is a Number") {
-        faultyItems.setAttribute('style','visibility:visible');
+        list.setAttribute('style','visibility:visible');
         copilotStatus.innerHTML = `copilot ${copilot} is not ready for launch`;
       }
       if (validateInput(copilot) === "Not a Number") {
@@ -59,8 +63,7 @@ window.addEventListener("load", function() {
       if (validateInput(fuelLevel) === "Is a Number") {
         fuelLevel = Number(fuelLevel);
         if (fuelLevel<10000){
-          //console.log('something');
-          faultyItems.setAttribute('style','visibility:visible');
+          list.setAttribute('style','visibility:visible');
           fuelStatus.innerHTML = "Fuel level too low for launch";
           launchStatus.setAttribute('style', 'color:rgb(199, 37, 78')
           launchStatus.innerHTML = "Shuttle not ready for launch";
@@ -70,8 +73,7 @@ window.addEventListener("load", function() {
       if (validateInput(cargoLevel) === "Is a Number") {
         cargoLevel = Number(cargoLevel);
         if (cargoLevel>10000){
-          //console.log('something');
-          faultyItems.setAttribute('style','visibility:visible');
+          list.setAttribute('style','visibility:visible');
           cargoStatus.innerHTML = "Cargo mass too high for launch";
           launchStatus.setAttribute('style', 'color:rgb(199, 37, 78')
           launchStatus.innerHTML = "Shuttle not ready for launch";
@@ -79,12 +81,17 @@ window.addEventListener("load", function() {
         
       }
       if (pilotStatus.innerHTML === `Pilot ${pilot} is ready for launch`&&copilotStatus.innerHTML === `copilot ${copilot} is ready for launch`&&fuelStatus.innerHTML !== "Fuel level too low for launch"&&cargoStatus.innerHTML !== "Cargo mass too high for launch") {
-          console.log('something')
-          faultyItems.setAttribute('style','visibility:visible');
+          console.log('ready for launch')
+          list.setAttribute('style','visibility:visible');
           launchStatus.setAttribute('style','color:rgb(65,159,106)');
           launchStatus.innerHTML = "Shuttle ready for launch";
+          missionTarget.innerText = "INSTALLING SUPER INVASIVE SPYWARE..."
+          missionTarget.style.color = 'red';
+          missionTarget.style.fontSize = '50px'
+
 
       }
+      
        
     });
    
