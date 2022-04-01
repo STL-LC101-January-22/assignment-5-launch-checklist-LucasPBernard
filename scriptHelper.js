@@ -59,7 +59,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     } else {
       (pilotStatus.innerHTML === `Pilot ${pilot} is ready for launch`&&copilotStatus.innerHTML === `Co-pilot ${copilot} is ready for launch`&&fuelStatus.innerHTML === "Fuel level high enough for launch"&&cargoStatus.innerHTML=== "Cargo mass low enough for launch") 
         console.log('ready for launch')
-        list.style.visibility = 'visible'
+        list.style.visibility = 'hidden'
         h2.style.color = "rgb(65, 159, 106)";
         h2.innerHTML = "Shuttle is Ready for Launch";
         fuelStatus.innerHTML = "Fuel level high enough for launch";
