@@ -48,24 +48,19 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     if (fuelLevel<10000){
       list.setAttribute('style','visibility:visible');
       fuelStatus.innerHTML = "Fuel level too low for launch";
-      //h2.setAttribute('style', 'color:rgb(199, 37, 78')
       h2.innerHTML = "Shuttle Not Ready for Launch";
-      console.log(h2.style.color)
       h2.style.color = "rgb(199, 37, 78)"
-      console.log(h2.style.color)
     } else if (cargoLevel>=10000){
       fuelStatus.innerHTML = "Fuel level high enough for launch";
       list.setAttribute('style','visibility:visible');
       cargoStatus.innerHTML = "Cargo mass too heavy for launch";
-      h2.setAttribute('style', 'color:rgb(199, 37, 78')
-      //h2.style.color = "rgb(199, 37, 78)"
+      h2.style.color = "rgb(199, 37, 78)"
       h2.innerHTML = "Shuttle Not Ready for Launch";
-      console.log(h2.style.color)
     } else {
       (pilotStatus.innerHTML === `Pilot ${pilot} is ready for launch`&&copilotStatus.innerHTML === `Co-pilot ${copilot} is ready for launch`&&fuelStatus.innerHTML === "Fuel level high enough for launch"&&cargoStatus.innerHTML=== "Cargo mass low enough for launch") 
         console.log('ready for launch')
         list.style.visibility = 'visible'
-        h2.setAttribute('style','color:rgb(65,159,106)');
+        h2.style.color = "rgb(65, 159, 106)";
         h2.innerHTML = "Shuttle is Ready for Launch";
         fuelStatus.innerHTML = "Fuel level high enough for launch";
         cargoStatus.innerHTML = "Cargo mass low enough for launch";
