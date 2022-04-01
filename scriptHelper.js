@@ -61,6 +61,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         list.setAttribute('style','visibility:visible');
         launchStatus.setAttribute('style','color:rgb(65,159,106)');
         launchStatus.innerHTML = "Shuttle is Ready for Launch";
+        fuelStatus.innerHTML = "Fuel level high enough for launch";
     } 
  
 }
