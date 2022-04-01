@@ -34,6 +34,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   let fuelStatus = document.getElementById('fuelStatus');
   let cargoStatus = document.getElementById('cargoStatus')
   let launchStatus = document.getElementById('launchStatus')
+  let list = document.getElementById("faultyItems");
   if (validateInput(pilot)==='Empty' || validateInput(copilot)==='Empty'||validateInput(fuelLevel)==='Empty'||validateInput(cargoLevel)==='Empty') {
     alert('All fields are required!');
   }
@@ -55,7 +56,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     } else {
       (pilotStatus.innerHTML === `Pilot ${pilot} is ready for launch`&&copilotStatus.innerHTML === `copilot ${copilot} is ready for launch`&&fuelStatus.innerHTML === "Fuel level high enough for launch"&&cargoStatus.innerHTML=== "Cargo mass low enough for launch") 
         console.log('ready for launch')
-        list.setAttribute('style','visibility:hidden');
+        list.setAttribute('style','visibility:visible');
         launchStatus.setAttribute('style','color:rgb(65,159,106)');
         launchStatus.innerHTML = "Shuttle is Ready for Launch";
     } 
