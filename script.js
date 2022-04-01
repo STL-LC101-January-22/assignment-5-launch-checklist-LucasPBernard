@@ -30,7 +30,7 @@ window.addEventListener("load", function() {
       let fuelLevel = fuelLevelInput.value
       let cargoLevelInput = document.querySelector("input[name=cargoMass]");
       let cargoLevel = cargoLevelInput.value
-      
+      list.style.visibility = 'hidden'
       formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel)
        
     });

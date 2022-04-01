@@ -34,7 +34,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   let cargoStatus = document.getElementById('cargoStatus')
   //let launchStatus = document.getElementById('launchStatus')
   let h2 = document.getElementById('launchStatus')
-  list.style.visibility = 'hidden'
+  //list.style.visibility = 'hidden'
 
   // launchStatus.setAttribute('style', 'color:rgb(199, 37, 78')
   if (validateInput(pilot)==='Empty' || validateInput(copilot)==='Empty'||validateInput(fuelLevel)==='Empty'||validateInput(cargoLevel)==='Empty') {
