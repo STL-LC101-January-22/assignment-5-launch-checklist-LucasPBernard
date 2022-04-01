@@ -40,8 +40,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     alert("Make sure to enter valid information for each field!");
   }
   
-  pilotStatus.innerHTML === `Pilot ${pilot} is ready for launch`
-  copilotStatus.innerHTML === `copilot ${copilot} is ready for launch`
+  pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`
+  copilotStatus.innerHTML = `copilot ${copilot} is ready for launch`
 
     if (fuelLevel<10000){
       list.setAttribute('style','visibility:visible');
