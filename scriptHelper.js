@@ -33,8 +33,10 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   let fuelStatus = document.getElementById('fuelStatus');
   let cargoStatus = document.getElementById('cargoStatus')
   let launchStatus = document.getElementById('launchStatus')
+  let launchStatusCheck = document.getElementById('launchStatusCheck')
+  launchStatusCheck.style.color = "rgb(199, 37, 78)"
   //console.log(list)
-  launchStatus.setAttribute('style', 'color:rgb(199, 37, 78')
+  // launchStatus.setAttribute('style', 'color:rgb(199, 37, 78')
   if (validateInput(pilot)==='Empty' || validateInput(copilot)==='Empty'||validateInput(fuelLevel)==='Empty'||validateInput(cargoLevel)==='Empty') {
     alert('All fields are required!');
   }
