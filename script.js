@@ -1,7 +1,5 @@
 // Write your JavaScript code here!
 // const { formSubmission } = require("./scriptHelper");
-
-
 // const { scriptHelper } = require("./scriptHelper");
 window.addEventListener("load", function() {
    console.log('compiled');
@@ -18,6 +16,9 @@ window.addEventListener("load", function() {
     })
 
     let list = document.getElementById("faultyItems");
+    console.log(list.style.visibility)
+    list.style.visibility = 'hidden'
+    console.log(list.style.visibility)
     let missionTarget = document.getElementById('missionTarget');
     let testForm = document.querySelector("form");
     testForm.addEventListener("submit", function(event) {
@@ -30,7 +31,7 @@ window.addEventListener("load", function() {
       let fuelLevel = fuelLevelInput.value
       let cargoLevelInput = document.querySelector("input[name=cargoMass]");
       let cargoLevel = cargoLevelInput.value
-      list.style.visibility = 'hidden'
+      //list.style.visibility = 'hidden'
       formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel)
        
     });
